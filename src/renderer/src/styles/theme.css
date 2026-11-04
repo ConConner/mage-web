@@ -1,0 +1,45 @@
+/*
+ * Design tokens. A theme sets five base colors (see ThemeService); every
+ * other color is derived here, so themes stay consistent automatically.
+ */
+:root {
+  --base-bg: #1e1f22;
+  --base-fg: #d4d4d4;
+  --base-outline: #3c3f45;
+  --base-outline-2: #2b2d31;
+  --base-accent: #4c9aff;
+  --accent-fg: #ffffff;
+
+  --bg: var(--base-bg);
+  --fg: var(--base-fg);
+  --fg-muted: color-mix(in srgb, var(--base-fg) 60%, var(--base-bg));
+  --fg-faint: color-mix(in srgb, var(--base-fg) 38%, var(--base-bg));
+  --accent: var(--base-accent);
+  --accent-soft: color-mix(in srgb, var(--base-accent) 28%, var(--base-bg));
+  --accent-faint: color-mix(in srgb, var(--base-accent) 14%, var(--base-bg));
+  --border: var(--base-outline);
+  --border-soft: var(--base-outline-2);
+
+  --surface-editor: var(--base-bg);
+  --surface-sidebar: color-mix(in srgb, var(--base-bg) 92%, var(--base-outline-2));
+  --surface-activity: color-mix(in srgb, var(--base-bg) 80%, var(--base-outline));
+  --surface-panel: var(--surface-sidebar);
+  --surface-tab: color-mix(in srgb, var(--base-bg) 88%, var(--base-outline));
+  --surface-input: color-mix(in srgb, var(--base-bg) 75%, var(--base-outline-2));
+  --surface-hover: color-mix(in srgb, var(--base-fg) 8%, transparent);
+  --surface-overlay: color-mix(in srgb, var(--base-bg) 94%, var(--base-fg));
+  --surface-statusbar: var(--base-accent);
+  --fg-statusbar: var(--accent-fg);
+  --shadow: 0 6px 24px rgb(0 0 0 / 0.35);
+
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Ubuntu, 'Helvetica Neue', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  --radius: 4px;
+}
+
+:root[data-theme-kind='light'] {
+  --surface-sidebar: color-mix(in srgb, var(--base-bg) 96%, #000);
+  --surface-activity: color-mix(in srgb, var(--base-bg) 90%, #000);
+  --surface-input: #ffffff;
+  --shadow: 0 6px 24px rgb(0 0 0 / 0.18);
+}
